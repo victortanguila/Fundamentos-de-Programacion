@@ -1,16 +1,29 @@
-# This is a sample Python script.
+def bubble_sort(matrix):
+    rows = len(matrix)
+    cols = len(matrix[0])
+    n = rows * cols
 
-# Press Mayús+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    for _ in range(n):
+        for i in range(rows):
+            for j in range(cols - 1):
+                if matrix[i][j] > matrix[i][j + 1]:
+                    matrix[i][j], matrix[i][j + 1] = matrix[i][j + 1], matrix[i][j]
 
+    return matrix
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+#sxx matriz bidimensional
+matrix = [
+    [7, 5, 6],
+    [9, 3, 2],
+    [4, 8, 7]
+]
 
+print("Matriz original:")
+for row in matrix:
+    print(row)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+sorted_matrix = bubble_sort(matrix)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print("\nMatriz ordenada:")
+for row in sorted_matrix:
+    print(row)
